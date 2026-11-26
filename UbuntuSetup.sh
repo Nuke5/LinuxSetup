@@ -184,12 +184,12 @@ fi
 
 # Obsidian
 if is_installed "obsidian"; then echo "[-] obsidian (already installed)"; else
-    download_file "https://github.com/obsidianmd/obsidian-releases/releases/download/v1.14.4/obsidian_1.14.4_amd64.deb" "obsidian.deb" "Debian"
+    download_file "https://github.com/obsidianmd/obsidian-releases/releases/download/v1.15.1/obsidian_1.15.1_amd64.deb" "obsidian.deb" "Debian"
 fi
 
 # Portmaster
 if is_installed "portmaster"; then echo "[-] portmaster (already installed)"; else
-    download_file "https://updates.safing.io/latest/linux_amd64/packages/Portmaster_2.2.3_amd64.deb" "portmaster.deb" "Debian"
+    download_file "https://updates.safing.io/latest/linux_amd64/packages/Portmaster_2.2.9_amd64.deb" "portmaster.deb" "Debian"
 fi
 
 # Discord
@@ -208,16 +208,16 @@ if is_installed "proton-authenticator"; then echo "[-] proton-authenticator (alr
 fi
 
 # Ente Auth
-if is_installed "ente-auth"; then echo "[-] ente-auth (already installed)"; else
-    download_file "https://github.com/ente/ente/releases/download/auth-v4.4.26/ente-auth-v4.4.26-x86_64.deb" "ente-auth.deb" "Debian"
-fi
+#if is_installed "ente-auth"; then echo "[-] ente-auth (already installed)"; else
+#    download_file "https://github.com/ente/ente/releases/download/auth-v4.4.27/ente-auth-v4.4.27-x86_64.deb" "ente-auth.deb" "Debian"
+#fi
 
 # Quickgui
 if is_installed "quickgui"; then echo "[-] quickgui (already installed)"; else
     download_file "$(get_latest_github_url "quickemu-project/quickgui" "linux.deb")" "quickgui.deb" "Debian"
 fi
 
-# Install downloaded .deb files individually so a failure 
+# Install downloaded .deb files individually so a failure
 # does not block the installation of other valid applications
 if ls *.deb >/dev/null 2>&1; then
     for deb in *.deb; do
@@ -252,6 +252,8 @@ echo "[+] Fetching AppImages..."
 sudo -u "$REAL_USER" wget -qO Joplin.AppImage "$(get_latest_github_url "laurent22/joplin" "AppImage")"
 sudo -u "$REAL_USER" wget -qO Cryptomator.AppImage "$(get_latest_github_url "cryptomator/cryptomator" "x86_64.AppImage")"
 sudo -u "$REAL_USER" wget -qO Tutanota.AppImage "https://app.tuta.com/desktop/tutanota-desktop-linux.AppImage"
+sudo -u "$REAL_USER" wget -qO EnteAuth.AppImage "https://github.com/ente/ente/releases/download/auth-v4.4.27/ente-auth-v4.4.27-x86_64.AppImage"
+sudo -u "$REAL_USER" wget -qO AppManager.AppImage "https://github.com/kem-a/AppManager/releases/download/v3.8.0/AppManager-3.8.0-anylinux-x86_64.AppImage"
 
 # iDescriptor (Logic reinforced for ZIP extraction)
 IDESC_URL=$(get_latest_github_url "iDescriptor/iDescriptor" "AppImage.zip")
