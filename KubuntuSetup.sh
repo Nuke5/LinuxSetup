@@ -92,7 +92,8 @@ APT_PKGS=(
     git intel-gpu-tools pdfcrack calibre signal-desktop
     quickemu libopengl0 firefox element-desktop syncthing
     brave-browser i965-va-driver vainfo remmina brave-origin
-    librewolf remmina-plugin-rdp remmina-plugin-secret sonobus intel-media-va-driver-non-free
+    librewolf remmina-plugin-rdp remmina-plugin-secret sonobus
+    intel-media-va-driver-non-free gvfs-backends gvfs-fuse
 )
 
 FLATPAK_PKGS=(
@@ -272,6 +273,15 @@ sudo chown root:root /usr/share/polkit-1/actions/com.bitwarden.Bitwarden.policy
 sudo chcon system_u:object_r:usr_t:s0 /usr/share/polkit-1/actions/com.bitwarden.Bitwarden.policy
 
 # --- 8. Configure KDE Settings and shortcuts ---
+# add nautilus
+sudo apt install --no-install-recommends nautilus
+# removing dolphin
+sudo apt-mark manual plasma-desktop plasma-workspace sddm kio kio-extras kde-cli-tools
+# removing dolphin
+sudo apt remove dolphin dolphin-plugins
+# Prevent  reinstall of dolphin
+sudo apt-mark hold dolphin
+
 # TO-DO
 # Keyboard shorcuts
 
