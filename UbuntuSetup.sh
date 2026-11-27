@@ -98,6 +98,7 @@ APT_PKGS=(
 FLATPAK_PKGS=(
     org.kde.kasts
     org.kde.kleopatra
+    com.mattjakeman.ExtensionManager
     com.moonlight_stream.Moonlight
     dev.zed.Zed
     io.github.ilya_zlobintsev.LACT
