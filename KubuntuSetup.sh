@@ -213,6 +213,11 @@ if is_installed "quickgui"; then echo "[-] quickgui (already installed)"; else
     download_file "$(get_latest_github_url "quickemu-project/quickgui" "linux.deb")" "quickgui.deb" "Debian"
 fi
 
+# clamui-privileged-helper
+if is_installed "clamui-privileged-helper"; then echo "[-] clamui-privileged-helper (already installed)"; else
+    download_file "https://github.com/linx-systems/clamui/releases/download/v0.6.0/clamui-privileged-helper_0.6.0_amd64.deb" "clamui-privileged-helper.deb" "Debian"
+fi
+
 # Install downloaded .deb files individually so a failure
 # does not block the installation of other valid applications
 if ls *.deb >/dev/null 2>&1; then
@@ -250,6 +255,7 @@ sudo -u "$REAL_USER" wget -qO Cryptomator.AppImage "$(get_latest_github_url "cry
 sudo -u "$REAL_USER" wget -qO Tutanota.AppImage "https://app.tuta.com/desktop/tutanota-desktop-linux.AppImage"
 sudo -u "$REAL_USER" wget -qO EnteAuth.AppImage "https://github.com/ente/ente/releases/download/auth-v4.4.27/ente-auth-v4.4.27-x86_64.AppImage"
 sudo -u "$REAL_USER" wget -qO AppManager.AppImage "https://github.com/kem-a/AppManager/releases/download/v3.8.0/AppManager-3.8.0-anylinux-x86_64.AppImage"
+sudo -u "$REAL_USER" wget -qO ClamUI.AppImage "https://github.com/linx-systems/clamui/releases/download/v0.6.0/ClamUI-0.6.0-x86_64.AppImage"
 
 # iDescriptor (Logic reinforced for ZIP extraction)
 IDESC_URL=$(get_latest_github_url "iDescriptor/iDescriptor" "AppImage.zip")
