@@ -275,7 +275,7 @@ sudo chcon system_u:object_r:usr_t:s0 /usr/share/polkit-1/actions/com.bitwarden.
 # --- 8. Configure KDE Settings and shortcuts ---
 # add nautilus
 sudo apt install --no-install-recommends nautilus
-# removing dolphin
+# Prevent core plasma apps from being removed
 sudo apt-mark manual plasma-desktop plasma-workspace sddm kio kio-extras kde-cli-tools
 # removing dolphin
 sudo apt remove dolphin dolphin-plugins
