@@ -96,8 +96,6 @@ APT_PKGS=(
 )
 
 FLATPAK_PKGS=(
-    com.mattjakeman.ExtensionManager
-    it.mijorus.gearlever
     org.kde.kasts
     org.kde.kleopatra
     com.moonlight_stream.Moonlight
