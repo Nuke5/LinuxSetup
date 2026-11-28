@@ -89,7 +89,7 @@ APT_PKGS=(
     vlc gimp bridge-utils qpdf mpv pigz btop
     ffmpegthumbnailer fastfetch flatpak gnome-software-plugin-flatpak
     adb virt-manager 7zip grsync qemu-system-x86 ffmpeg libvirt-daemon-system
-    git intel-gpu-tools pdfcrack calibre signal-desktop
+    git intel-gpu-tools pdfcrack calibre signal-desktop libssl3t64 
     proton-vpn-gnome-desktop quickemu libopengl0 firefox gnome-tweaks
     element-desktop syncthing brave-browser gnome-sushi i965-va-driver vainfo remmina
     brave-origin librewolf remmina-plugin-rdp remmina-plugin-secret sonobus intel-media-va-driver-non-free
